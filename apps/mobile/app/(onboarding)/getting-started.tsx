@@ -1,4 +1,4 @@
-import { View, Text, Pressable } from 'react-native';
+import { View, Text, Pressable, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
@@ -10,18 +10,19 @@ export default function GettingStartedScreen() {
         {/* Hero Section */}
         <View className="flex-1 items-center justify-center">
           <View className="mb-8 items-center justify-center">
-            {/* Styled Blob Background */}
-            <View className="absolute h-40 w-40 rounded-full bg-blue-50 opacity-50" />
-            <View className="h-32 w-32 items-center justify-center rounded-full bg-blue-100 shadow-xl shadow-blue-200">
-              <Ionicons name="school" size={60} color="#2563eb" />
-            </View>
-            <View className="absolute bottom-0 right-0 h-12 w-12 items-center justify-center rounded-full bg-white shadow-lg">
-              <Ionicons name="sparkles" size={24} color="#f59e0b" />
+            {/* Styled Logo Background */}
+            <View className="absolute h-44 w-44 rounded-full bg-orange-50 opacity-50" />
+            <View className="h-36 w-36 items-center justify-center rounded-3xl bg-white shadow-2xl shadow-orange-200">
+              <Image 
+                source={require('../../../assets/icon.png')} 
+                className="h-28 w-28"
+                resizeMode="contain"
+              />
             </View>
           </View>
 
           <Text className="mb-4 text-center text-4xl font-extrabold tracking-tight text-gray-900">
-            Learn Smarter with <Text className="text-blue-600">Blob</Text>
+            Learn Smarter with <Text className="text-orange-500">Blob</Text>
           </Text>
           
           <Text className="text-center text-lg leading-7 text-gray-500">
@@ -32,7 +33,7 @@ export default function GettingStartedScreen() {
         {/* Action Section */}
         <View className="mt-12">
           <Pressable
-            className="h-16 items-center justify-center rounded-2xl bg-blue-600 shadow-lg active:bg-blue-700"
+            className="h-16 items-center justify-center rounded-2xl bg-orange-500 shadow-lg shadow-orange-200 active:bg-orange-600"
             onPress={() => router.push('/(onboarding)/login')}>
             <View className="flex-row items-center">
               <Text className="mr-2 text-xl font-bold text-white">Continue</Text>
